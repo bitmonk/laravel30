@@ -10,7 +10,9 @@ class TodoController extends Controller
 
     public function todo()
     {
-        return view('Page.Todo.todo');
+        $todos = Todo::all();
+        // return $todos;
+        return view('Page.Todo.todo', compact('todos'));
     }
 
     
@@ -20,5 +22,26 @@ class TodoController extends Controller
         $todo = new Todo();
         $todo->task = $request->blabla;
         $todo->save();
+        return redirect()->back();
     }
+
+    public function edit($id)
+    {
+
+        $user = Todo::FindOrFail($id);
+        return view('Page.Todo.edit', compact('user'));
+    }
+
+    public function update(Request $request, $id){
+        $todoUpdate = Todo::FindOrFail($id);
+        $todoUpdate->task = $request->task;
+        $todoUpdate->update();
+
+        return redirect()->back();
+    }
+
+    public function delete(){
+        
+    }
+
 }

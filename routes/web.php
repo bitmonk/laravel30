@@ -29,6 +29,9 @@ Route::resource('/home',HomeController::class)->name('any','home');
 Route::get('/todo',[TodoController::class,'todo'])->name('todo');
 Route::post('/todo',[TodoController::class,'addTodo'])->name('todo.post');
 
+Route::get('/edit/{id}', [TodoController::class,'edit'])->name('todo.edit');
+Route::post('/edit/{id}', [TodoController::class,'update'])->name('todo.update');
+Route::get('/delete/{id}', [TodoController::class,'delete'])->name('todo.delete');
 
 
 
