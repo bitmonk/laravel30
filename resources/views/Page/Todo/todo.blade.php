@@ -35,13 +35,13 @@
                             <td>{{$data->task}}</td>
                             <td>
                                 @if ($data->status==0)
-                                <span><a class="badge bg-danger" href="">Incomplete</a></span>
+                                <span><a class="badge bg-danger" href="{{route('incomplete', $data->id)}}">Incomplete</a></span>
                                 @else
                                 <span><a class="badge bg-success" href="">Complete</a></span>
                                 @endif
                             </td>
-                            <td><a href="{{route('todo.edit', $data->id)}}"><button class="badge bg-success text-black">Edit</button></a></td>
-                            <td><a href="{{route('todo.delete', $data->id)}}"><button class="badge bg-danger text-black">Delete</button></a></td>
+                            <td><a href="{{route('todo.edit', $data->id)}}"><button class="badge bg-success text-white">Edit</button></a></td>
+                            <td><a href="{{route('delete', $data->id)}}"><button class="badge bg-danger text-white">Delete</button></a></td>
                           </tr>
                         @endforeach
                     </tbody>

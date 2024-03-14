@@ -40,7 +40,19 @@ class TodoController extends Controller
         return redirect()->back();
     }
 
-    public function delete(){
+    public function delete($id){
+        $todoDelete = Todo::FindOrFail($id);
+        $todoDelete->delete();
+
+        return redirect()->back();
+    }
+
+    public function status($id){
+        $status = Todo::FindOrFail($id);
+        $status->status = 1;
+        $status->save();
+
+        return redirect()->back();
         
     }
 
