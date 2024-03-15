@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
             $table->string('task');
+            $table->string('image')->nullable();
             $table->boolean('status')->default(0);
 
             $table->timestamps();

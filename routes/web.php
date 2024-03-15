@@ -32,7 +32,9 @@ Route::post('/todo',[TodoController::class,'addTodo'])->name('todo.post');
 Route::get('/edit/{id}', [TodoController::class,'edit'])->name('todo.edit');
 Route::post('/edit/{id}', [TodoController::class,'update'])->name('todo.update');
 Route::get('/delete/{id}', [TodoController::class,'delete'])->name('delete');
-Route::get('/status/{id}', [TodoController::class,'status'])->name('incomplete');
+Route::get('/status/{id}', [TodoController::class,'statusComplete'])->name('status.complete');
+Route::get('/statusIncomplete/{id}', [TodoController::class,'statusIncomplete'])->name('status.incomplete');
+
 
 
 

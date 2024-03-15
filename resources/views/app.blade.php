@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    @include('sweetalert::alert')
     @include('components.nav')
 
     
